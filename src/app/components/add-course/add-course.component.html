@@ -1,0 +1,43 @@
+<div class="contact_info_container" style="margin-top: 200px; margin-bottom: 200px;">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-lg-12">
+                <div class="contact_form">
+                    <div class="contact_info_title">{{titre}} course</div>
+                    <form action="#" class="comment_form" #courseForm='ngForm' (ngSubmit)='addEditCourse()'>
+
+                        <div>
+                            <div class="form_title">Name course</div>
+                            <input type="text" class="comment_input" [(ngModel)]='course.name' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+                        <div>
+                            <div class="form_title">Price</div>
+                            <input type="text" class="comment_input" [(ngModel)]='course.price' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+                        <div>
+                            <div class="form_title">Trainer</div>
+                            <input type="text" class="comment_input" [(ngModel)]='course.trainer' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+                        <div>
+                            <div class="form_title">Duration</div>
+                            <input type="text" class="comment_input" [(ngModel)]='course.duration' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+                        <div>
+                            <div class="form_title">Capacity</div>
+                            <input type="text" class="comment_input" [(ngModel)]='course.capacity' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+
+
+                        <div>
+                            <button type="submit" class="comment_button trans_200">{{titre}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

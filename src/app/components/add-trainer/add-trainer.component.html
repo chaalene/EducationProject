@@ -1,0 +1,63 @@
+<div class="contact_info_container" style="margin-top: 200px; margin-bottom: 200px;">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-lg-6">
+                <div class="contact_form">
+                    <div class="contact_info_title" *ngIf='inEdit'>{{trainer?.title}} Trainer form</div>
+                    <div class="contact_info_title" *ngIf='!inEdit'>Add Trainer form</div>
+                    <form class="comment_form" [formGroup]='trainerFormGroup'>
+
+                        <div>
+                            <div class="form_title">Name</div>
+                            <input type="text" class="comment_input" formControlName='name' [(ngModel)]='trainer.name' required="required">
+                        </div>
+                        <div *ngIf="trainerFormGroup.controls['name'].invalid && (trainerFormGroup.controls['name'].dirty ||trainerFormGroup.controls['name'].touched) ">
+                            <div *ngIf="trainerFormGroup.controls['name'].errors.required" style="color: red;">
+                                name is required
+                            </div>
+                            <div *ngIf="trainerFormGroup.controls['name'].errors.minlength" style="color: red;">
+                                name must have at least 5 caracters
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="form_title">Speciality</div>
+                            <input type="text" class="comment_input" formControlName='speciality' [(ngModel)]='trainer.speciality' required="required">
+                        </div>
+                        <div *ngIf="trainerFormGroup.controls['speciality'].invalid && (trainerFormGroup.controls['speciality'].dirty ||trainerFormGroup.controls['speciality'].touched) ">
+                            <div *ngIf="trainerFormGroup.controls['speciality'].errors.required" style="color: red;">
+                                speciality is required
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form_title">Experience</div>
+                            <input type="text" class="comment_input" formControlName='experience' [(ngModel)]='trainer.experience' required="required">
+                        </div>
+                        <div *ngIf="trainerFormGroup.controls['experience'].invalid && (trainerFormGroup.controls['experience'].dirty ||trainerFormGroup.controls['experience'].touched) ">
+                            <div *ngIf="trainerFormGroup.controls['experience'].errors.required" style="color: red;">
+                                experience is required
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form_title">Avatar</div>
+                            <button type="submit" class="btn btn-danger" (click)="filePiker.click()">Upload</button>
+                        </div>
+                        <div>
+                            <input style="visibility: hidden;" type="file" class="comment_input" (change)='onImageSelected($event)' #filePiker required="required">
+                        </div>
+
+                        <img [src]="imagePreview" *ngIf='imagePreview' alt="">
+                        <div>
+                            <button type="submit" class="comment_button trans_200" (click)="addEditTrainer()" *ngIf='inEdit'>{{trainer?.title}} Trainer form</button>
+                            <button type="submit" class="comment_button trans_200" (click)="addEditTrainer()" *ngIf='!inEdit'>Add Trainer form</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

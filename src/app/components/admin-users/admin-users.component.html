@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>Telephone</th>
+            <th> actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let inputUser of dataAllUsers'>
+            <td>{{inputUser._id}}</td>
+            <td>{{inputUser.firstName}}</td>
+            <td>{{inputUser.lastName}}</td>
+            <td>{{inputUser.email}}</td>
+            <td>{{inputUser.tel}} </td>
+            <td>
+                <button type="button" class="btn btn-primary" (click)='goToDisplayUser(inputUser._id)'>Display</button>
+                <button type="button" class="btn btn-warning" (click)='goToEditUser(inputUser._id)'>Edit</button>
+                <button type="button" class="btn btn-danger" (click)='deleteUser(inputUser._id)'>Delete</button>
+            </td>
+        </tr>
+        <!-- <app-admin-user [inputUser]='b'></app-admin-user> -->
+    </tbody>
+</table>

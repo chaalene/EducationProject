@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Specialiy</th>
+            <th>Experience</th>
+            <th>img</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let adminTrainer of trainersData">
+            <td>{{ adminTrainer._id }}</td>
+            <td>{{ adminTrainer.name }}</td>
+            <td>{{ adminTrainer.speciality }}</td>
+            <td>{{ adminTrainer.experience }}</td>
+            <td>{{ adminTrainer.image }}</td>
+            <td>
+                <button type="button" class="btn btn-primary" (click)='goToDisplayTrainer(adminTrainer._id)'>Display</button>
+                <button type="button" class="btn btn-warning" (click)='goToEditTrainer(adminTrainer._id)'>Edit</button>
+                <button type="button" class="btn btn-danger" (click)='deleteCourse(adminTrainer._id)'>Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

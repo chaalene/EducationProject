@@ -1,0 +1,57 @@
+<div class="contact_info_container" style="margin-top: 200px; margin-bottom: 200px;">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-lg-12">
+                <div class="contact_form">
+                    <div class="contact_info_title">{{titre}} Trainer</div>
+                    <form class="comment_form" [formGroup]='trainerFormGroup'>
+
+                        <div>
+                            <div class="form_title">Name</div>
+                            <input type="text" class="comment_input" formControlName='name' required="required">
+                        </div>
+                        <div *ngIf="trainerFormGroup.controls['name'].invalid && (trainerFormGroup.controls['name'].dirty ||trainerFormGroup.controls['name'].touched) ">
+                            <div *ngIf="trainerFormGroup.controls['name'].errors.required" style="color: red;">
+                                name is required
+                            </div>
+                            <div *ngIf="signupForm.controls['name'].errors.minlength" style="color: red;">
+                                name must have at least 5 caracters
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="form_title">Speciality</div>
+                            <input type="text" class="comment_input" formControlName='speciality' required="required">
+                        </div>
+                        <div *ngIf="trainerFormGroup.controls['speciality'].invalid && (trainerFormGroup.controls['speciality'].dirty ||trainerFormGroup.controls['speciality'].touched) ">
+                            <div *ngIf="trainerFormGroup.controls['speciality'].errors.required" style="color: red;">
+                                speciality is required
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form_title">Experience</div>
+                            <input type="text" class="comment_input" formControlName='experience' required="required">
+                        </div>
+                        <div *ngIf="trainerFormGroup.controls['experience'].invalid && (trainerFormGroup.controls['experience'].dirty ||trainerFormGroup.controls['experience'].touched) ">
+                            <div *ngIf="trainerFormGroup.controls['experience'].errors.required" style="color: red;">
+                                experience is required
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form_title">Photo</div>
+                            <input type="image" class="comment_input" formControlName='img' required="required">
+                        </div>
+
+                        <div>
+                            <button type="submit" class="comment_button trans_200" (click)="addTrainer()">{{titre}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

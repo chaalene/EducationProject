@@ -1,0 +1,29 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name of course</th>
+            <th>Trainer</th>
+            <th>duration</th>
+            <th>capacity</th>
+            <th>Price</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let inputAdminCourse of dataAllCourses'>
+            <td>{{inputAdminCourse._id}}</td>
+            <td>{{inputAdminCourse.name}}</td>
+            <td>{{inputAdminCourse.trainer}}</td>
+            <td>{{inputAdminCourse.duration}} </td>
+            <td>{{inputAdminCourse.capacity}}</td>
+            <td>{{inputAdminCourse.price}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" (click)='goToDisplayCourse(inputAdminCourse._id)'>Display</button>
+                <button type="button" class="btn btn-warning" (click)='goToEditCourse(inputAdminCourse._id)'>Edit</button>
+                <button type="button" class="btn btn-danger" (click)='deleteCourse(inputAdminCourse._id)'>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

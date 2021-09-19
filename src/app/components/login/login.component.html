@@ -1,0 +1,31 @@
+<div class="contact_info_container" style="margin-top: 200px; margin-bottom: 200px;">
+    <div class="container">
+        <div class="row">
+
+            <!-- Contact Form -->
+            <div class="col-lg-12">
+                <div class="contact_form">
+                    <div class="contact_info_title">Login Form</div>
+                    <form action="#" class="comment_form" #loginForm='ngForm' (ngSubmit)='login()'>
+
+                        <div>
+                            <div class="form_title">Email</div>
+                            <input type="email" class="comment_input" [(ngModel)]='user.email' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+                        <div>
+                            <div class="form_title">Password</div>
+                            <input type="password" class="comment_input" [(ngModel)]='user.pwd' [ngModelOptions]="{standalone: true}" required="required">
+                        </div>
+                        <div style="color: red;">{{errorMessage}}</div>
+                        <div>
+                            <button type="submit" class="comment_button trans_200">login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+
+        </div>
+    </div>
+</div>

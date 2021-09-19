@@ -1,0 +1,36 @@
+<div class="course">
+    <div class="course_image"><img src="assets/images/course_1.jpg" alt=""></div>
+    <div class="course_body">
+        <h3 class="course_title">
+            <a href="course.html"></a>
+        </h3>
+        <div class="course_teacher">{{courseInput.name }}</div>
+        <!--// a l'interieur de {{courseInput.name }} on met le pipe |asterix -->
+        <div [ngStyle]="{'color': priceColor(courseInput.price)[1] }" class="course_teacher">{{courseInput.trainer}}</div>
+        <div class="course_text">
+            <p>{{courseInput.description }}</p>
+        </div>
+    </div>
+    <div class="course_footer">
+        <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+            <div class="course_info">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <span>{{courseInput.capacity}} </span>
+                <!--// a l'interieur de balise span on met la fonction pipe {{plural(courseInput.capacity)}} -->
+            </div>
+            <div class="course_info">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <span>{{courseInput.price }}</span>
+            </div>
+            <!-- <div [ngClass]="{
+                red:priceColor(courseInput.price)[0]=='0',
+                green:priceColor(courseInput.price)[0]=='1',
+                orange:priceColor(courseInput.price)[0]=='2'
+            }
+            " class="course_price ml-auto">{{courseInput.price}}</div> -->
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="comment_button trans_200" (click)='goToDisplay(courseInput._id)'>Display</button>
+    </div>
+</div>
